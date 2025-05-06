@@ -1,0 +1,54 @@
+{
+    "version": "1.0",
+    "timestamp": "2025-05-04T23:35:42.999159",
+    "game_state": {
+        "fen": "rnb2k1r/pppp4/4p1p1/4P2n/1b1P1Pq1/8/PPP5/RNBK4 w - - 1 14",
+        "move_stack_uci": [
+            "e2e4",
+            "g7g5",
+            "d1h5",
+            "e7e6",
+            "f1d3",
+            "g8f6",
+            "e4e5",
+            "f6h5",
+            "d3g6",
+            "h7g6",
+            "d2d4",
+            "f8b4",
+            "e1d1",
+            "g5g4",
+            "g1f3",
+            "g4f3",
+            "h1g1",
+            "f3g2",
+            "g1g2",
+            "e8f8",
+            "g2g6",
+            "f7g6",
+            "h2h4",
+            "d8h4",
+            "f2f4",
+            "h4g4"
+        ],
+        "captured_by_white_symbols": [
+            "bP",
+            "bP"
+        ],
+        "captured_by_black_symbols": [
+            "wQ",
+            "wR",
+            "wB",
+            "wN",
+            "wP",
+            "wP"
+        ]
+    },
+    "metadata": {
+        "elapsed_time_ms": 75313,
+        "is_ai_game": true,
+        "ai_player_color": "BLACK",
+        "ai_depth": 2,
+        "board_flipped": false
+    }
+}
