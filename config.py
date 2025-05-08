@@ -26,10 +26,10 @@ log.info("<--- ==================== Starte Modul '%s' ==================== --->"
 
 
 # --- Debugging ---
-DEBUG_MODE = True # Zusätzliche Log-Ausgaben (DEBUG Level) aktivieren?
-log.info("Debug Mode: %s", DEBUG_MODE)
+DEBUG_MODE = False # Zusätzliche Log-Ausgaben (DEBUG Level) aktivieren?
+log.info("Debug Mode: %s", {"eingeschaltet" if DEBUG_MODE else "ausgeschaltet"})
 
-TARGET_FPS = 120
+TARGET_FPS = 60
 log.info("Target FPS set to: %d", TARGET_FPS)
 
 # -- Grundlegende Fenster- und Brett-Einstellungen --
@@ -70,7 +70,9 @@ except NameError:
 log.info("Base Directory: %s", BASE_DIR)
 
 ASSETS_DIR = os.path.join(BASE_DIR, 'assets')
-IMAGE_DIR = os.path.join(ASSETS_DIR, 'images')   # Verzeichnis für Figurenbilder
+IMAGE_DIR = os.path.join(ASSETS_DIR, 'images')   # Verzeichnis für Figurenbilder unterteilt in PNGs und SVGs
+PNG_DIR = os.path.join(IMAGE_DIR, 'PNGs')        # PNGs
+SVG_DIR = os.path.join(IMAGE_DIR, 'SVGs')        # SVGs
 SOUND_DIR = os.path.join(ASSETS_DIR, 'sounds')   # Verzeichnis für Soundeffekte
 FONT_DIR = os.path.join(ASSETS_DIR, 'fonts')     # Verzeichnis für benutzerdefinierte Schriftarten
 BOOK_DIR = os.path.join(ASSETS_DIR, 'books')     # Verzeichnis für Eröffnungsbücher
@@ -251,8 +253,8 @@ def load_images():
     loaded_count = 0
     for piece in pieces:
         image = None
-        image_path = os.path.join(IMAGE_DIR, f'{piece}{IMAGE_FILE_TYPE}')
-        fallback_path = os.path.join(IMAGE_DIR, f'{piece}{FALLBACK_IMAGE_FILE_TYPE}')
+        image_path = os.path.join(PNG_DIR, f'{piece}{IMAGE_FILE_TYPE}')
+        fallback_path = os.path.join(SVG_DIR, f'{piece}{FALLBACK_IMAGE_FILE_TYPE}')
         log.debug("Attempting to load image for %s...", piece)
 
         # Prioritize PNG if it exists
